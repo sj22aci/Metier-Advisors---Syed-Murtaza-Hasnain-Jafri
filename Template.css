@@ -1,0 +1,113 @@
+body {
+    margin: 0;
+    font-family: Century Gothic, sans-serif;
+    background-color: #fafcfe;   
+    color: #0a0a0f;
+    font-weight: bold;
+  }
+
+/* Nav */
+
+.header {
+    margin: 10px;
+
+}
+.navbar {
+    background-image: linear-gradient(180deg, #3eb075, #69bf70);
+    border-radius: 15px;
+    padding: 5px;
+}
+.navbar-toggle {
+    background-color: #f6f8fc;
+    border-radius: 15px;
+    border: none;
+}
+.icon-bar {
+    background-color: none;
+    border: 1px solid #0a0a0f  ;
+}
+.navbar-brand {
+    background-color: none;
+    color: #f6f8fc;
+}
+.scroll-link {
+    color: #ffffff;
+}
+.scroll-top {
+    color: #0a0a0f;
+}
+.link {
+  color: #ffffff;
+}
+/* Nav */
+
+/*body*/
+  h1 {
+    text-align: center;
+    font-weight: bold;
+  }
+  h4 {
+    text-align: center;
+    font-weight: bold;
+    padding: 5px;
+  }
+  p {
+    text-align: justify;
+  }
+  .card-1 {
+    background-color: #0a0a0f;
+    color: #ffffff;
+    border-radius: 15px;
+    margin: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+    
+  }
+  .card-2 {
+    margin: 10px;
+    background-color: #f6f8fc;
+    color: #0a0a0f;
+    border-radius: 15px;
+    text-align: center;
+    padding: 25px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+  }
+
+  .card-3 {
+    margin: 10px;
+    background-color: #f6f8fc;
+    color: #0a0a0f;
+    border-radius: 15px;
+    font-weight: normal;
+    text-align: center;
+    padding: 25px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+    display: flex;
+  }
+  .card-3 h5 {
+    font-weight: bold;
+    text-align: left;
+  }
+  .card-3 h6 {
+    font-weight: bold;
+    text-align: left;
+  }
+  .card-3 ul {
+    text-align: justify;
+  }
+/*body*/
+
+/*Footer*/
+
+.footer-bottom {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 10px;
+    background: linear-gradient(180deg, #3eb075, #69bf70);;    
+    font-size: 15px;
+  }
+.free {
+    margin: 30px;
+}
+/*Footer*/
+
