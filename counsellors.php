@@ -1,7 +1,7 @@
 <?php
   // Connect to the database
   $host = "localhost";
-  $username = "root";
+  $username = "sj22aci";
   $password = "";
   $dbname = "metier-advisors";
 
