@@ -51,17 +51,7 @@
             <div class="col-md-6">
                 <?php include 'counsellors-connection.php';?>
             </div>
-            <div class="col-md-6">
-                <div class="card-3">
-                    <img src="Images/ava3-bg.webp" alt="Counsellor 2" class="card-img-top" style="width: 100px"
-                        height="100px" />
-                    <div class="card-body">
-                        <h5 class="card-title">Counsellor 2</h5>
-                        <p class="card-text">Counsellor 2's bio goes here...</p>
-                        <a href="#" class="btn btn-primary">Book Appointment</a>
-                    </div>
-                </div>
-            </div>
+            
             <div class="col-md-6">
                 <div class="card-3">
                     <img src="Images/ava6-bg.webp" alt="Counsellor 3" class="card-img-top" style="width: 100px"
