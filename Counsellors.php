@@ -49,7 +49,7 @@
         </div>
         <div class="row">
             <div class="col-md-6">
-                <?php include 'counsellors-connection.php';?>
+                <?php include 'counsellors-connection.php'; ?>
             </div>
         </div>
     </div>
