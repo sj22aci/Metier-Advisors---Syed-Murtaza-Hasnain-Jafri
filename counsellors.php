@@ -33,7 +33,7 @@ if (mysqli_num_rows($result) > 0) {
     echo "<div class='card-body'>";
     echo "<h5 class='card-title'>" . $row['name'] . "</h5>";
     echo "<p class='card-text'>" . $row['bio'] . "</p>";
-    echo "<a href='#' class='btn btn-primary'>Book Appointment</a>";
+    echo "<a href='#' id='book-button' class='btn btn-primary'>Book Appointment</a>";
     echo "</div>";
     echo "</div>";
   }
