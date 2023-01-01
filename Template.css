@@ -94,7 +94,7 @@ body {
   .card-3 ul {
     text-align: justify;
   }
-  .card-2 input {
+  .card-2 input, textarea {
     background-color: #f6f8fc;
     color: #0a0a0f;
     border-radius: 15px;
