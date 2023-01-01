@@ -1,9 +1,12 @@
 <?php
   // Connect to the database
+  
+  /*
   $host = "localhost";
   $username = "sj22aci";
   $password = "tuP4VFTHRAm8";
   $dbname = "dbsj22aci";
+  */
 
   $conn = mysqli_connect($host, $username, $password, $dbname);
 
