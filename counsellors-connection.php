@@ -32,7 +32,10 @@ if (mysqli_num_rows($result) > 0) {
     echo "<img src='" . $row['image'] . "' class='card-img-top img-fluid' style='width: 100px; height: 100px;' alt='" . $row['name'] . "'>";
     echo "<div class='card-body'>";
     echo "<h5 class='card-title'>" . $row['name'] . "</h5>";
+    echo "<div id='bio-text'>";
     echo "<p class='card-text'>" . $row['bio'] . "</p>";
+    echo "</div>";
+    echo "<button id='expand-button' class='btn btn-primary'>Read more</button>";
     echo "<a href='#' id='book-button' class='btn btn-primary'>Book Appointment</a>";
     echo "</div>";
     echo "</div>";
