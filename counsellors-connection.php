@@ -32,8 +32,10 @@ if (mysqli_num_rows($result) > 0) {
     echo "<div class='card-3'>";
     echo "<img src='" . $row['image'] . "' class='card-img-top img-fluid' style='width: 100px; height: 100px;' alt='" . $row['name'] . "'>";
     echo "<div class='card-body'>";
+    echo "<div class='card-title-and-pay'>";
     echo "<h5 class='card-title'>" . $row['name'] . "</h5>";
-    echo "<p style='font-weight: bold;'>" . $row['pay'] . "</p>";
+    echo "<h5 class='card-title'>" . $row['pay'] . "</h5>";
+    echo "</div>";
     echo "<div id='bio-text'>";
     echo "<p class='card-text'>" . $row['bio'] . "</p>";
     echo "</div>";
@@ -49,4 +51,3 @@ if (mysqli_num_rows($result) > 0) {
 // Close the connection
 mysqli_close($conn);
 ?>
-
