@@ -130,6 +130,25 @@ textarea {
   cursor: pointer;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
 }
+#bio-text {
+  text-align: left;
+  max-height: 3em;
+  overflow: hidden;
+  transition: max-height 0.5s ease-out;
+}
+
+#bio-text.truncated {
+  max-height: none;
+}
+
+#expand-button {
+  font-size: 0.8em;
+  background: none;
+  border: none;
+  color: #3eb075;
+  cursor: pointer;
+}
+
 
 #book-button {
   font-size: 16px;

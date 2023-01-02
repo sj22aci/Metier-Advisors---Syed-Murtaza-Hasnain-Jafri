@@ -105,7 +105,30 @@
     </script>
 
     <!--Footer-->
-    
+
+    <script>
+        // Get a reference to the bio text and expand button
+        const bioText = document.getElementById("bio-text");
+        const expandButton = document.getElementById("expand-button");
+
+        // Add a click event listener to the expand button
+        expandButton.addEventListener("click", function () {
+            // Toggle the "truncated" class on the bio text
+            bioText.classList.toggle("truncated");
+
+            // If the bio text is expanded, change the button text to "See less"
+            if (bioText.classList.contains("truncated")) {
+                expandButton.innerHTML = "See less";
+                expandButton.style.outline = "none";
+            }
+            // If the bio text is truncated, change the button text to "Read more"
+            else {
+                expandButton.innerHTML = "Read more";
+                expandButton.style.outline = "none";
+            }
+        });
+    </script>
+
 </body>
 
 </html>
