@@ -106,6 +106,7 @@
 
     <!--Footer-->
 
+    <!--Counsellor description script-->
     <script>
         // Get a reference to the bio text and expand button
         const bioText = document.getElementById("bio-text");
@@ -128,6 +129,7 @@
             }
         });
     </script>
+    <!--Counsellor description script-->
 
 </body>
 

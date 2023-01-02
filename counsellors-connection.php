@@ -8,6 +8,7 @@ $password = "tuP4VFTHRAm8";
 $dbname = "dbsj22aci";
 */
 
+// Connect to the database
 $host = "localhost";
 $username = "root";
 $password = "";
@@ -47,3 +48,4 @@ if (mysqli_num_rows($result) > 0) {
 // Close the connection
 mysqli_close($conn);
 ?>
+
