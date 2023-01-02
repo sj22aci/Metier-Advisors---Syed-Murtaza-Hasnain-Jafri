@@ -134,8 +134,9 @@ textarea {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
 }
 
-.card-3 #pay-text {
-  font-weight: bold;
+.card-title-and-pay {
+  display: flex;
+  justify-content: space-between;
 }
 
 #bio-text {
