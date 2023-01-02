@@ -153,8 +153,10 @@ textarea {
   width: 100%;
   padding: 10px;
   background: linear-gradient(180deg, #3eb075, #69bf70);
-  ;
   font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .free {
