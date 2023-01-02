@@ -59,8 +59,8 @@
         <br>
     </div>
 
-        <!-- Footer-->
-        <div class="footer-bottom">
+    <!-- Footer-->
+    <div class="footer-bottom">
         Copyright &copy; Métier Advisors . 2022
         <label class="switch">
             <input type="checkbox" id="dark-mode-checkbox">
@@ -105,6 +105,7 @@
     </script>
 
     <!--Footer-->
+    
 </body>
 
 </html>
