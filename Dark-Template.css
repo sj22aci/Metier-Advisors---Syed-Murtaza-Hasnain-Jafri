@@ -73,6 +73,13 @@ input:checked + .slider:before {
 .dark-mode .card-2{
   color: #ffffff;
 }
+.card-2 input,
+textarea {
+  background: rgba(255, 255, 255, 0.15);
+}
 .dark-mode #standard-button {
+  background: linear-gradient(45deg, #FC466B, #3F5EFB);
+}
+.dark-mode #book-button {
   background: linear-gradient(45deg, #FC466B, #3F5EFB);
 }
