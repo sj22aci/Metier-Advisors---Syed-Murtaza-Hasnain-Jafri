@@ -109,6 +109,9 @@ p {
 .card-3 ul {
   text-align: justify;
 }
+.card-2 li {
+  text-align: left;
+}
 
 .card-2 input,
 textarea {
