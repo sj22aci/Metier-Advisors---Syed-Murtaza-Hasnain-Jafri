@@ -108,25 +108,20 @@
 
     <!--Counsellor description script-->
     <script>
-        // Get a reference to the bio text and expand button
-        const bioText = document.getElementById("bio-text");
-        const expandButton = document.getElementById("expand-button");
+        const bioTextElements = document.querySelectorAll("#bio-text");
+        const expandButtonElements = document.querySelectorAll("#expand-button");
 
-        // Add a click event listener to the expand button
-        expandButton.addEventListener("click", function () {
-            // Toggle the "truncated" class on the bio text
-            bioText.classList.toggle("truncated");
-
-            // If the bio text is expanded, change the button text to "See less"
-            if (bioText.classList.contains("truncated")) {
-                expandButton.innerHTML = "See less";
-                expandButton.style.outline = "none";
-            }
-            // If the bio text is truncated, change the button text to "Read more"
-            else {
-                expandButton.innerHTML = "Read more";
-                expandButton.style.outline = "none";
-            }
+        bioTextElements.forEach((bioTextElement, index) => {
+            expandButtonElements[index].addEventListener("click", function () {
+                bioTextElement.classList.toggle("truncated");
+                if (bioTextElement.classList.contains("truncated")) {
+                    expandButtonElements[index].innerHTML = "See less";
+                    expandButtonElements[index].style.outline = "none";
+                } else {
+                    expandButtonElements[index].innerHTML = "Read more";
+                    expandButtonElements[index].style.outline = "none";
+                }
+            });
         });
     </script>
     <!--Counsellor description script-->
