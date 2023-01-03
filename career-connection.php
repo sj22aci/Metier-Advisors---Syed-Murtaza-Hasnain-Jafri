@@ -30,6 +30,7 @@ if ($result) {
     $pay_range = $row['pay_range'];
 
     // Output the data in the desired format
+    echo "<div class='card-2'>";
     echo "<h3>$job_title</h3>";
     echo "<p>Job Description:<br>$job_description</p>";
     echo "<p>Requirements:</p>";
@@ -46,6 +47,7 @@ if ($result) {
     echo '<input type="file" id="resume" name="resume"><br>';
     echo '<input id="standard-button" type="submit" value="Submit">';
     echo '</form>';
+    echo "</div>";
   }
 } else {
   // The query failed

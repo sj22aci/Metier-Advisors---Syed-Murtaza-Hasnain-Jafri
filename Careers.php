@@ -49,55 +49,9 @@
         <div class="card-1">
             <h1>Careers</h1>
         </div>
-        <div class="card-2">
-            <h3>Senior Guidance Counselor</h3>
-            <p>Job description:<br>
-                The Senior Guidance Counselor is responsible for providing academic, personal, and career counseling to students in a high school 
-                or post-secondary educational institution. The Counselor works with students to develop academic plans, set goals, and make informed 
-                decisions about their future. They also provide support and resources to students facing personal or social challenges.</p>
-            <p>Requirements:</p>
-            <ul>
-                <li>A Master's degree in Counseling or a related field</li>
-                <li>At least 5 years of experience working as a Counselor in a school or post-secondary educational setting</li>
-                <li>Proficiency with computer programs and databases for record-keeping and reporting purposes</li>
-            </ul>
-            <p>Pay Range: $80/hr</p>
-            <h3>Apply</h3>
-            <form action="process-form.php" method="post" enctype="multipart/form-data">
-                <label for="name">Name:</label><br>
-                <input type="text" id="name" name="name"><br>
-                <label for="email">Email:</label><br>
-                <input type="email" id="email" name="email"><br>
-                <label for="resume">Resume:</label><br>
-                <input type="file" id="resume" name="resume"><br>
-                <input id='standard-button' type="submit" value="Submit">
-            </form>
-        </div>
-        <div class="card-2">
-            <h3>Junior Guidance Counselor</h3>
-            <p>Job Description:<br>
-                The Junior Guidance Counselor is responsible for providing academic, personal, and career counseling to students in a high school or 
-                post-secondary educational institution. The Counselor works with students to develop academic plans, set goals, and make informed 
-                decisions about their future. They also provide support and resources to students facing personal or social challenges.</p>
-            <p>Requirements:</p>
-            <ul>
-                <li>A Master's degree in Counseling or a related field</li>
-                <li>At least 1 year of experience working as a Counselor in a school or post-secondary educational setting</li>
-                <li>Ability to work independently and as part of a team</li>
-            </ul>
-            <p>Pay Range: $40/hr</p>
-            <h3>Apply</h3>
-            <form action="process-form.php" method="post" enctype="multipart/form-data">
-                <label for="name">Name:</label><br>
-                <input type="text" id="name" name="name"><br>
-                <label for="email">Email:</label><br>
-                <input type="email" id="email" name="email"><br>
-                <label for="resume">Resume:</label><br>
-                <input type="file" id="resume" name="resume"><br>
-                <input id='standard-button' type="submit" value="Submit">
-            </form>
-        </div>
 
+        <?php include 'career-connection.php'; ?>
+        
     </div>
 
     <div class="free">
