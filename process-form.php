@@ -24,7 +24,7 @@ if (isset($_FILES['resume']) && $_FILES['resume']['error'] == 0) {
     $file_name = uniqid() . '-' . $_FILES['resume']['name'];
 
     // Set the target directory
-    $target_dir = '/Career-Uploadfiles';
+    $target_dir = 'Career-Uploadfiles/upload';
 
     // Set the target file path
     $target_file = $target_dir . $file_name;
@@ -32,7 +32,7 @@ if (isset($_FILES['resume']) && $_FILES['resume']['error'] == 0) {
     // Attempt to move the uploaded file
     if (move_uploaded_file($_FILES['resume']['tmp_name'], $target_file)) {
         // Construct the INSERT statement
-        $sql = "INSERT INTO table_name (name, email, resume_path)
+        $sql = "INSERT INTO form_data (name, email, resume_path)
     VALUES ('$name', '$email', '$target_file')";
 
         // Execute the query and handle any errors
