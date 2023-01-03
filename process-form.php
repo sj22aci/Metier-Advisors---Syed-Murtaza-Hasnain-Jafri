@@ -23,7 +23,7 @@ if (isset($_FILES['resume']) && $_FILES['resume']['error'] == 0) {
     $file_name = uniqid() . '-' . $_FILES['resume']['name'];
 
     // Set the target directory
-    $target_dir = '/path/to/upload/directory/';
+    $target_dir = '/Career-Uploadfiles';
 
     // Set the target file path
     $target_file = $target_dir . $file_name;
