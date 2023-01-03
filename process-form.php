@@ -17,15 +17,36 @@ if ($conn->connect_error) {
 $name = mysqli_real_escape_string($conn, $_POST['name']);
 $email = mysqli_real_escape_string($conn, $_POST['email']);
 
-// Construct the INSERT statement
-$sql = "INSERT INTO table_name (name, email)
-VALUES ('$name', '$email')";
+// Check if the file was uploaded successfully
+if (isset($_FILES['resume']) && $_FILES['resume']['error'] == 0) {
+  // Generate a unique file name
+  $file_name = uniqid() . '-' . $_FILES['resume']['name'];
 
-// Execute the query and handle any errors
-if ($conn->query($sql) === TRUE) {
-  echo "New record created successfully";
+  // Set the target directory
+  $target_dir = '/path/to/upload/directory/';
+
+  // Set the target file path
+  $target_file = $target_dir . $file_name;
+
+  // Attempt to move the uploaded file
+  if (move_uploaded_file($_FILES['resume']['tmp_name'], $target_file)) {
+    // Construct the INSERT statement
+    $sql = "INSERT INTO table_name (name, email, resume_path)
+    VALUES ('$name', '$email', '$target_file')";
+
+    // Execute the query and handle any errors
+    if ($conn->query($sql) === TRUE) {
+      echo "New record created successfully";
+    } else {
+      echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+  } else {
+    // An error occurred
+    echo "Error uploading file";
+  }
 } else {
-  echo "Error: " . $sql . "<br>" . $conn->error;
+  // An error occurred
+  echo "Error uploading file";
 }
 
 // Close the connection
