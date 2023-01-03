@@ -63,7 +63,7 @@
             </ul>
             <p>Pay Range: $80/hr</p>
             <h3>Apply</h3>
-            <form action="/apply" method="post">
+            <form action="/process-form.php" method="post" enctype="multipart/form-data">
                 <label for="name">Name:</label><br>
                 <input type="text" id="name" name="name"><br>
                 <label for="email">Email:</label><br>
