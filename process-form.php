@@ -37,17 +37,20 @@ if (isset($_FILES['resume']) && $_FILES['resume']['error'] == 0) {
 
         // Execute the query and handle any errors
         if ($conn->query($sql) === TRUE) {
-            echo "New record created successfully";
+            echo "<script>alert('New record created successfully');</script>";
         } else {
-            echo "Error: " . $sql . "<br>" . $conn->error;
+            echo "<script>alert('Error: " . $sql . "<br>" . $conn->error . "');</script>";
         }
     } else {
         // An error occurred
         echo "Error uploading file";
+
+        echo "<script>alert('Error uploading file');</script>";
     }
 } else {
+
     // An error occurred
-    echo "Error uploading file";
+    echo "<script>alert('Error uploading file');</script>";
 }
 
 // Close the connection
