@@ -50,7 +50,7 @@ if (isset($_FILES['resume']) && $_FILES['resume']['error'] == 0) {
 } else {
 
     // An error occurred
-    echo "<script>alert('Error uploading file');</script>";
+    echo "<script>alert('Error, Please fill out the form!');</script>";
 }
 
 // Close the connection
