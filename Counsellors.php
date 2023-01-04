@@ -28,12 +28,13 @@
                 </div>
                 <!--/.navbar-header-->
                 <div id="main-nav" class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav">
+                    <ul class="nav navbar-nav navbar-right">
                         <li><a href="Main.html" class="scroll-link" data-id="Main">Main</a></li>
                         <li><a href="Counsellors.php" class="scroll-top">Counsellors</a></li>
                         <li><a href="Careers.php" class="scroll-link" data-id="Careers">Careers</a></li>
                         <li><a href="Blog.html" class="scroll-link" data-id="Blog">Blog</a></li>
                         <li><a href="Contact.html" class="scroll-link" data-id="Contact">Contact</a></li>
+                        <li><a href="Profile.html" class="scroll-link" data-id="Profile">My Profile</a></li>
                     </ul>
                 </div>
                 <!--/.navbar-collapse-->
