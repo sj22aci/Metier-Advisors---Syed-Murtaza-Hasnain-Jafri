@@ -69,7 +69,6 @@ input:checked + .slider:before {
 .dark-mode .footer-bottom {
   background: linear-gradient(45deg, #FC466B, #3F5EFB);
 }
-
 .dark-mode .card-2, .dark-mode .card-3{
   color: #ffffff;
 }
