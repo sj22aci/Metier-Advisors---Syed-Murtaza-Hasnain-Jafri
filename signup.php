@@ -5,7 +5,7 @@ $username = "root";
 $password = "";
 $dbname = "metier-advisors";
 
-$conn = mysqli_connect($host, $user, $password, $dbname);
+$conn = mysqli_connect($host, $username, $password, $dbname);
 
 // Check if the login form has been submitted
 if (isset($_POST["login"])) {
