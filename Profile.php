@@ -64,7 +64,7 @@
                     <div class="slider-tab"></div>
                 </div>
                 <div class="form-inner">
-                    <form action="#" class="login">
+                    <form action="login.php" class="login">
                         <div class="field">
                             <input type="text" id="email" placeholder="Email Address" required>
                         </div>
@@ -75,7 +75,7 @@
                         <input id="standard-button" class="btn btn-primary" type="submit" value="Login">
                         <div class="signup-link">Not a member? <a href="">Signup now</a></div>
                     </form>
-                    <form action="#" class="signup">
+                    <form action="signup.php" class="signup">
                         <div class="field">
                             <input type="text" id="name" placeholder="Name" required>
                         </div>
