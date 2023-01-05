@@ -66,10 +66,10 @@
                 <div class="form-inner">
                     <form action="login.php" class="login">
                         <div class="field">
-                            <input type="text" id="email" placeholder="Email Address" required>
+                            <input type="text" id="email" name="email" placeholder="Email Address" required>
                         </div>
                         <div class="field">
-                            <input type="password" id="password" placeholder="Password" required>
+                            <input type="password" id="password" name="password" placeholder="Password" required>
                         </div>
                         <div class="pass-link"><a href="#">Forgot password?</a></div>
                         <input id="standard-button" class="btn btn-primary" type="submit" value="Login">
@@ -77,15 +77,15 @@
                     </form>
                     <form action="signup.php" class="signup">
                         <div class="field">
-                            <input type="text" id="name" placeholder="Name" required>
+                            <input type="text" id="name" name="name" placeholder="Name" required>
                         </div>
                         <div class="field">
-                            <input type="text" id="email" placeholder="Email Address" required>
+                            <input type="text" id="email" name="email" placeholder="Email Address" required>
                         </div>
                         <div class="field">
-                            <input type="password" id="password" placeholder="Password" required>
+                            <input type="password" id="password" name="password" placeholder="Password" required>
                         </div>
-                            <input id="standard-button" class="btn btn-primary" type="submit" value="Signup">
+                            <input id="standard-button" class="btn btn-primary" type="submit" name="signup" value="Signup">
                     </form>
                 </div>
             </div>

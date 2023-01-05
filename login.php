@@ -7,6 +7,15 @@ $dbname = "metier-advisors";
 
 $conn = mysqli_connect($host, $username, $password, $dbname);
 
+// Create connection
+$conn = new mysqli($host, $username, $password, $dbname);
+
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
 // Check if the login form has been submitted
 if (isset($_POST["login"])) {
     // Get the login credentials from the request
