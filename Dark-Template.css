@@ -101,3 +101,15 @@ textarea {
 .dark-mode .wrapper .slide-controls {
   border: 1px solid rgba(255, 255, 255, 0.15)
 }
+.dark-mode .form-inner form .field input {
+  border: 1px solid rgba(255, 255, 255, 0.15)
+}
+.dark-mode .form-inner form .signup-link {
+  color: #ffffff;
+}
+.dark-mode .form-inner form .signup-link a {
+  color: #C14D97;
+}
+.dark-mode .form-inner form .pass-link a {
+  color: #C14D97;
+}

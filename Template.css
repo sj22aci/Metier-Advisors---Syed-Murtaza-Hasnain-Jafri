@@ -82,7 +82,7 @@ p {
   color: #0a0a0f;
   border-radius: 15px;
   text-align: center;
-  padding: 25px;
+  padding: 30px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
 }
 
@@ -93,7 +93,7 @@ p {
   border-radius: 15px;
   font-weight: normal;
   text-align: center;
-  padding: 25px;
+  padding: 30px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
   display: flex;
 }
@@ -132,8 +132,10 @@ textarea {
   color: white;
   border: none;
   border-radius: 15px;
+  font-size: 20px;
+  font-weight: 500;
+  margin-top: 20px;
   cursor: pointer;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
 }
 
 .card-title-and-pay {
@@ -176,7 +178,6 @@ textarea {
 
 .wrapper {
   overflow: hidden;
-  max-width: 390px;
   background: rgba(255, 255, 255, 0.15);
   padding: 30px;
   border-radius: 15px;
@@ -285,18 +286,16 @@ input[type="radio"] {
 }
 
 .form-inner form .field input {
+  background: rgba(255, 255, 255, 0.15);
   height: 100%;
   width: 100%;
   outline: none;
   padding-left: 15px;
   border-radius: 15px;
   border: 1px solid lightgrey;
-  border-bottom-width: 2px;
   font-size: 17px;
   transition: all 0.3s ease;
 }
-
-
 
 .form-inner form .field input::placeholder {
   color: #999;
@@ -307,9 +306,17 @@ input[type="radio"] {
   margin-top: 5px;
 }
 
+.form-inner form .pass-link a {
+  color: #3eb075;
+}
+
 .form-inner form .signup-link {
   text-align: center;
   margin-top: 30px;
+}
+
+.form-inner form .signup-link a {
+  color: #3eb075;
 }
 
 form .btn {
@@ -328,23 +335,6 @@ form .btn .btn-layer {
   background-image: linear-gradient(180deg, #3eb075, #69bf70);
   border-radius: 15px;
   transition: all 0.4s ease;
-  ;
-}
-
-
-form .btn input[type="submit"] {
-  height: 100%;
-  width: 100%;
-  z-index: 1;
-  position: relative;
-  background: none;
-  border: none;
-  color: #fff;
-  padding-left: 0;
-  border-radius: 15px;
-  font-size: 20px;
-  font-weight: 500;
-  cursor: pointer;
 }
 
 /*Login/Signup8?
