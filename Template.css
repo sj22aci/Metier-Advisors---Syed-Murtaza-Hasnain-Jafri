@@ -117,14 +117,23 @@ p {
 
 .card-2 input,
 textarea {
-  background-color: #f6f8fc;
+  background: rgba(255, 255, 255, 0.15);
   color: #0a0a0f;
   border-radius: 15px;
   margin: 5px auto;
-  border: #0a0a0f 1px solid;
+  outline: none;
+  border: 1px solid lightgrey;
   padding: 10px 10px;
+  font-size: 17px;
   cursor: pointer;
-  width: 80%;
+  width: 100%;
+  height: 100%;
+}
+
+.card-2 input::placeholder,
+textarea::placeholder {
+  color: #999;
+  transition: all 0.3s ease;
 }
 
 #standard-button {
