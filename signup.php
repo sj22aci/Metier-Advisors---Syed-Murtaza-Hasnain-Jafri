@@ -7,29 +7,6 @@ $dbname = "metier-advisors";
 
 $conn = mysqli_connect($host, $username, $password, $dbname);
 
-// Check if the login form has been submitted
-if (isset($_POST["login"])) {
-    // Get the login credentials from the request
-    $email = $_POST["email"];
-    $password = $_POST["password"];
-
-    // Escape the email and password to prevent SQL injection
-    $email = mysqli_real_escape_string($conn, $email);
-    $password = mysqli_real_escape_string($conn, $password);
-
-    // Construct the SQL query to retrieve the user from the database
-    $sql = "SELECT * FROM users WHERE email = '$email' AND password = '$password'";
-    $result = mysqli_query($conn, $sql);
-
-    // Check if the query returned a result
-    if (mysqli_num_rows($result) > 0) {
-        // Login is valid, redirect the user to the dashboard page
-        header("Location: dashboard.php");
-    } else {
-        // Login is invalid, display an error message
-        echo "Invalid email or password. Please try again.";
-    }
-}
 
 // Check if the signup form has been submitted
 if (isset($_POST["signup"])) {

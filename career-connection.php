@@ -46,10 +46,10 @@ if ($result) {
         echo "<h3>Apply</h3>";
         // Output the form
         echo '<form action="process-form.php" method="post" enctype="multipart/form-data">';
-        echo '<input type="text" id="name" name="name" placeholder="Name"><br>';
-        echo '<input type="email" id="email" name="email" placeholder="Email"><br>';
+        echo '<input type="text" id="name" name="name" placeholder="Name" required><br>';
+        echo '<input type="email" id="email" name="email" placeholder="Email" required><br>';
         echo '<label for="resume" style="font-size: 17px;">Resume:</label><br>';
-        echo '<input type="file" id="resume" name="resume"><br>';
+        echo '<input type="file" id="resume" name="resume" required><br>';
         echo '<input id="standard-button" type="submit" value="Submit">';
         echo '</form>';
         echo "</div>";

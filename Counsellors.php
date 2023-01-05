@@ -34,7 +34,7 @@
                         <li><a href="Careers.php" class="scroll-link" data-id="Careers">Careers</a></li>
                         <li><a href="Blog.html" class="scroll-link" data-id="Blog">Blog</a></li>
                         <li><a href="Contact.html" class="scroll-link" data-id="Contact">Contact Us</a></li>
-                        <li><a href="Profile.html" class="scroll-link" data-id="Profile">My Profile</a></li>
+                        <li><a href="Profile.php" class="scroll-link" data-id="Profile">My Profile</a></li>
                     </ul>
                 </div>
                 <!--/.navbar-collapse-->
