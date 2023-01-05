@@ -86,3 +86,18 @@ textarea {
 .dark-mode #expand-button{
   color: #C14D97 ;
 }
+.dark-mode .wrapper .title-text {
+  color: #ffffff;
+}
+.dark-mode form .btn .btn-layer {
+  background: linear-gradient(45deg, #FC466B, #3F5EFB);
+}
+.dark-mode .slide-controls .slider-tab{
+  background: linear-gradient(45deg, #FC466B, #3F5EFB);
+}
+.dark-mode .slide-controls label.signup {
+  color: #fff;
+}
+.dark-mode .wrapper .slide-controls {
+  border: 1px solid rgba(255, 255, 255, 0.15)
+}
