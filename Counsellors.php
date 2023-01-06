@@ -1,3 +1,15 @@
+<?php
+// Start the session
+session_start();
+
+// Check if the user is logged in
+if (!isset($_SESSION["loggedin"]) || !$_SESSION["loggedin"]) {
+    // Redirect the user to the login page
+    header("location: login.php");
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -52,6 +64,48 @@
         <div class="row">
             <div class="col-md-6">
                 <?php include 'counsellors-connection.php'; ?>
+            </div>
+            <!-- Modal -->
+            <div id="bookingModal" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Booking Form</h4>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="form-group">
+                                    <label for="date-input">Date:</label>
+                                    <input type="date" class="form-control" id="date-input">
+                                </div>
+                                <div class="form-group">
+                                    <label for="time-input">Time:</label>
+                                    <input type="time" class="form-control" id="time-input">
+                                </div>
+                                <div class="form-group">
+                                    <label for="message-input">Message:</label>
+                                    <textarea class="form-control" id="message-input" rows="3"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="payment-select">Payment Option:</label>
+                                    <select class="form-control" id="payment-select">
+                                        <option>Option 1</option>
+                                        <option>Option 2</option>
+                                        <option>Option 3</option>
+                                    </select>
+                                </div>
+                                <button type="submit" id="standard-button" class="btn btn-primary">Submit</button>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
     </div>

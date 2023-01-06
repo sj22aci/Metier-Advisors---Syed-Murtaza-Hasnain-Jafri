@@ -5,7 +5,7 @@ server with default setting (user 'root' with no password) */
 $host = "localhost";
 $username = "root";
 $password = "";
-$dbname = "temp";
+$dbname = "metier-advisors";
 
 // Create connection
 $link = mysqli_connect($host, $username, $password, $dbname);

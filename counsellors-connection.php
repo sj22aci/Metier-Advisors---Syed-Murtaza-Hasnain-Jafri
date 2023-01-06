@@ -40,7 +40,7 @@ if (mysqli_num_rows($result) > 0) {
     echo "<p class='card-text'>" . $row['bio'] . "</p>";
     echo "</div>";
     echo "<button id='expand-button' class='btn btn-primary'>Read more</button>";
-    echo "<a href='#' id='book-button' class='btn btn-primary'>Book Appointment</a>";
+    echo "<a href='#' id='book-button' class='btn btn-primary' data-toggle='modal' data-target='#bookingModal'>Book Appointment</a>";
     echo "</div>";
     echo "</div>";
   }

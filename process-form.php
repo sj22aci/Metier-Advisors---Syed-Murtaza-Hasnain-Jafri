@@ -38,6 +38,7 @@ if (isset($_FILES['resume']) && $_FILES['resume']['error'] == 0) {
         // Execute the query and handle any errors
         if ($conn->query($sql) === TRUE) {
             echo "<script>alert('New record created successfully');</script>";
+            header("location: Careers.php");
         } else {
             echo "<script>alert('Error: " . $sql . "<br>" . $conn->error . "');</script>";
         }
