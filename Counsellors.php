@@ -92,9 +92,7 @@ if (!isset($_SESSION["loggedin"]) || !$_SESSION["loggedin"]) {
                                 <div class="form-group">
                                     <label for="payment-select">Payment Option:</label>
                                     <select class="form-control" id="payment-select">
-                                        <option>Option 1</option>
-                                        <option>Option 2</option>
-                                        <option>Option 3</option>
+                                        <option>Bank Transfer</option>
                                     </select>
                                 </div>
                                 <button type="submit" id="standard-button" class="btn btn-primary">Submit</button>
