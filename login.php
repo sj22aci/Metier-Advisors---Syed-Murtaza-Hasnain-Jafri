@@ -1,72 +1,175 @@
 <?php
-// Connect to the database
-$host = "localhost";
-$username = "root";
-$password = "";
-$dbname = "metier-advisors";
+// Initialize the session
+session_start();
 
-$conn = mysqli_connect($host, $username, $password, $dbname);
-
-// Create connection
-$conn = new mysqli($host, $username, $password, $dbname);
-
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+// Check if the user is already logged in, if yes then redirect him to welcome page
+if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
+    header("location: welcome.php");
+    exit;
 }
 
-// Check if the login form has been submitted
-if (isset($_POST["login"])) {
-    // Get the login credentials from the request
-    $email = $_POST["email"];
-    $password = $_POST["password"];
+// Include config file
+require_once "config.php";
 
-    // Escape the email and password to prevent SQL injection
-    $email = mysqli_real_escape_string($conn, $email);
-    $password = mysqli_real_escape_string($conn, $password);
+// Define variables and initialize with empty values
+$username = $password = "";
+$username_err = $password_err = $login_err = "";
 
-    // Construct the SQL query to retrieve the user from the database
-    $sql = "SELECT * FROM users WHERE email = '$email' AND password = '$password'";
-    $result = mysqli_query($conn, $sql);
+// Processing form data when form is submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    // Check if the query returned a result
-    if (mysqli_num_rows($result) > 0) {
-        // Login is valid, redirect the user to the dashboard page
-        header("Location: dashboard.php");
+    // Check if username is empty
+    if (empty(trim($_POST["username"]))) {
+        $username_err = "Please enter username.";
     } else {
-        // Login is invalid, display an error message
-        echo "Invalid email or password. Please try again.";
+        $username = trim($_POST["username"]);
     }
-}
-// Check if the "Forgot password" form has been submitted
-if (isset($_POST["forgot"])) {
-    // Get the email from the request
-    $email = $_POST["email"];
 
-    // Escape the email to prevent SQL injection
-    $email = mysqli_real_escape_string($conn, $email);
-
-    // Construct the SQL query to retrieve the user from the database
-    $sql = "SELECT * FROM users WHERE email = '$email'";
-    $result = mysqli_query($conn, $sql);
-
-    // Check if the query returned a result
-    if (mysqli_num_rows($result) > 0) {
-        // The user exists, generate a new password and update the database
-        $new_password = generate_password();
-        $hashed_password = password_hash($new_password, PASSWORD_DEFAULT);
-        $sql = "UPDATE users SET password = '$hashed_password' WHERE email = '$email'";
-        mysqli_query($conn, $sql);
-
-        // Send the new password to the user via email
-        send_password_email($email, $new_password);
-
-        // Display a message to confirm that the password has been reset
-        echo "A new password has been sent to your email address. Please check your email and use the new password to login.";
+    // Check if password is empty
+    if (empty(trim($_POST["password"]))) {
+        $password_err = "Please enter your password.";
     } else {
-        // The user does not exist, display an error message
-        echo "The specified email address does not exist in our database. Please try again.";
+        $password = trim($_POST["password"]);
     }
+
+    // Validate credentials
+    if (empty($username_err) && empty($password_err)) {
+        // Prepare a select statement
+        $sql = "SELECT id, username, password FROM users WHERE username = ?";
+
+        if ($stmt = mysqli_prepare($link, $sql)) {
+            // Bind variables to the prepared statement as parameters
+            mysqli_stmt_bind_param($stmt, "s", $param_username);
+
+            // Set parameters
+            $param_username = $username;
+
+            // Attempt to execute the prepared statement
+            if (mysqli_stmt_execute($stmt)) {
+                // Store result
+                mysqli_stmt_store_result($stmt);
+
+                // Check if username exists, if yes then verify password
+                if (mysqli_stmt_num_rows($stmt) == 1) {
+                    // Bind result variables
+                    mysqli_stmt_bind_result($stmt, $id, $username, $hashed_password);
+                    if (mysqli_stmt_fetch($stmt)) {
+                        if (password_verify($password, $hashed_password)) {
+                            // Password is correct, so start a new session
+                            session_start();
+
+                            // Store data in session variables
+                            $_SESSION["loggedin"] = true;
+                            $_SESSION["id"] = $id;
+                            $_SESSION["username"] = $username;
+
+                            // Redirect user to welcome page
+                            header("location: welcome.php");
+                        } else {
+                            // Password is not valid, display a generic error message
+                            $login_err = "Invalid username or password.";
+                        }
+                    }
+                } else {
+                    // Username doesn't exist, display a generic error message
+                    $login_err = "Invalid username or password.";
+                }
+            } else {
+                echo "Oops! Something went wrong. Please try again later.";
+            }
+
+            // Close statement
+            mysqli_stmt_close($stmt);
+        }
+    }
+
+    // Close connection
+    mysqli_close($link);
 }
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Métier Advisors</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="Template.css">
+    <link rel="stylesheet" href="Dark-Template.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="header">
+        <div class="container">
+            <nav class="navbar navbar" role="navigation">
+                <div class="navbar-header">
+                    <button type="button" id="nav-toggle" class="navbar-toggle" data-toggle="collapse"
+                        data-target="#main-nav">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                    <a href="Main.html" class="navbar-brand scroll-top"><em>M</em>étier <em>A</em>dvisors</a>
+                </div>
+                <!--/.navbar-header-->
+                <div id="main-nav" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="Main.html" class="scroll-link" data-id="Main">Main</a></li>
+                        <li><a href="Counsellors.php" class="scroll-link" data-id="Counsellors">Counsellors</a></li>
+                        <li><a href="Careers.php" class="scroll-link" data-id="Careers">Careers</a></li>
+                        <li><a href="Blog.html" class="scroll-link" data-id="Blog">Blog</a></li>
+                        <li><a href="Contact.html" class="scroll-link" data-id="Contact">Contact Us</a></li>
+                        <li><a href="Profile.php" class="scroll-top">My Profile</a></li>
+                    </ul>
+                </div>
+                <!--/.navbar-collapse-->
+            </nav>
+            <!--/.navbar-->
+        </div>
+        <!--/.container-->
+    </div>
+    <!--/.header-->
+    <div class="container">
+    <div class="card-2">
+
+        <h2>Login</h2>
+        <p>Please fill in your credentials to login.</p>
+
+        <?php
+        if (!empty($login_err)) {
+            echo '<div class="alert alert-danger">' . $login_err . '</div>';
+        }
+        ?>
+        
+        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+            <div class="form-group">
+                <input type="text" name="username" placeholder="username"
+                    class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>"
+                    value="<?php echo $username; ?>">
+                <span class="invalid-feedback">
+                    <?php echo $username_err; ?>
+                </span>
+            </div>
+            <div class="form-group">
+                <input type="password" name="password" placeholder="password"
+                    class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>">
+                <span class="invalid-feedback">
+                    <?php echo $password_err; ?>
+                </span>
+            </div>
+            <div class="form-group">
+                <input type="submit" class="btn btn-primary" value="Login">
+            </div>
+            <p>Don't have an account? <a href="register.php">Sign up now</a>.</p>
+        </form>
+    </div>
+    </div>
+</body>
+
+</html>
