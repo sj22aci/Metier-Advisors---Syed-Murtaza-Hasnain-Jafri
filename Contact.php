@@ -125,11 +125,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <div class="free">
         <br>
     </div>
-    
+
     <div class="message_box" style="margin:10px 0px;">
-			<?php echo $status; ?>
-		</div>
-    
+        <?php echo $status; ?>
+    </div>
+
     <!-- Footer-->
     <div class="footer-bottom">
         Copyright &copy; Métier Advisors . 2022

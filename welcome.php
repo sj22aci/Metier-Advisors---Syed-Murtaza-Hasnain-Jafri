@@ -62,11 +62,50 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
                     <?php echo htmlspecialchars($_SESSION["username"]); ?>
                 </b> Welcome to Métier Advisors</h1>
             <div class="card-1">
-                <h4>Appointments</h4>
+                <h4>Bookings</h4>
             </div>
-            <div class="card-2">
-                
-            </div>
+            <table>
+                <tr>
+                    <th>Counsellor Name</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Message</th>
+                </tr>
+                <?php
+                // Connect to the database
+                $host = "localhost";
+                $username = "root";
+                $password = "";
+                $dbname = "metier-advisors";
+
+                $conn = mysqli_connect($host, $username, $password, $dbname);
+                // Check connection
+                if (!$conn) {
+                    die("Connection failed: " . mysqli_connect_error());
+                }
+
+                // Get the list of appointments for the logged in user
+                $user_id = $_SESSION['id'];
+                $appointments_query = "SELECT counsellors_name, date, time, message FROM appointments WHERE user_id = $user_id";
+                $appointments_result = mysqli_query($conn, $appointments_query);
+
+                // Loop through the list of appointments and display them in the table
+                while ($row = mysqli_fetch_assoc($appointments_result)) {
+
+                    $counsellor_name = $row['counsellors_name'];
+                    $date = $row['date'];
+                    $time = $row['time'];
+                    $message = $row['message'];
+
+                    echo "<tr>
+                            <td>$counsellor_name</td>
+                            <td>$date</td>
+                            <td>$time</td>
+                            <td>$message</td>
+                        </tr>";
+                }
+                ?>
+            </table>
         </div>
 
         <div class="card-2">

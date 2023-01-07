@@ -16,7 +16,12 @@ if (!$conn) {
 }
 
 // Get the form data
-$counsellor = $_POST['counsellor-select'];
+$counsellor_id = $_POST['counsellor-select'];
+
+$counsellor_name_query = "SELECT name FROM counsellors WHERE id = $counsellor_id";
+$counsellor_name_result = mysqli_query($conn, $counsellor_name_query);
+$counsellor_name = mysqli_fetch_assoc($counsellor_name_result)['name'];
+
 $date = $_POST['date-input'];
 $time = $_POST['time-input'];
 $message = $_POST['message-input'];
@@ -24,8 +29,9 @@ $payment = $_POST['payment-select'];
 $user_id = $_SESSION['id'];
 
 // Insert the data into the MySQL database
-$sql = "INSERT INTO appointments (counsellors_id, date, time, message, payment, user_id)
-VALUES ('$counsellor', '$date', '$time', '$message', '$payment', '$user_id')";
+$sql = "INSERT INTO appointments (counsellors_id, counsellors_name, date, time, message, payment, user_id)
+VALUES ('$counsellor_id', '$counsellor_name', '$date', '$time', '$message', '$payment', '$user_id')";
+
 
 if (mysqli_query($conn, $sql)) {
     echo "New record created successfully";
