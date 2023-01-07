@@ -91,6 +91,11 @@ mysqli_close($conn);
         <div class="card-1">
             <h1>Counsellors</h1>
         </div>
+        <div class="bookbtn">
+            <a href='#' id='book-button' class='btn btn-primary' data-toggle='modal' data-target='#bookingModal'>
+                <h4>Book Appointment</h4>
+            </a>
+        </div>
         <div class="row">
             <div class="col-md-6">
                 <?php include 'counsellors-connection.php'; ?>

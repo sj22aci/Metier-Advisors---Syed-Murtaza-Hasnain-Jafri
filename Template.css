@@ -170,8 +170,15 @@ textarea::placeholder {
   color: #3eb075;
   cursor: pointer;
 }
+.bookbtn{
+  background: none;
+  text-align: center;
+  margin: 10px;
 
+}
 #book-button {
+  width: 100%;
+  text-align: center;
   font-size: 17px;
   background-image: linear-gradient(180deg, #3eb075, #69bf70);
   color: white;
@@ -179,6 +186,7 @@ textarea::placeholder {
   border-radius: 15px;
   padding: 8px 16px;
   margin-top: 10px;
+  margin-bottom: 10px;
   cursor: pointer;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
 }
