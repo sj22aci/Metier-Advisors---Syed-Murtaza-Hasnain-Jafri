@@ -76,7 +76,7 @@ if (!isset($_SESSION["loggedin"]) || !$_SESSION["loggedin"]) {
                             <h4 class="modal-title">Booking Form</h4>
                         </div>
                         <div class="modal-body">
-                            <form>
+                            <form action="book.php" method="post">
                                 <div class="form-group">
                                     <label for="date-input">Date:</label>
                                     <input type="date" class="form-control" id="date-input">

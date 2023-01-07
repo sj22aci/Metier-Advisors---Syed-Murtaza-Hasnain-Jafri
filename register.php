@@ -142,6 +142,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     </div>
     <!--/.header-->
     <div class="container">
+    <div class="card-1">
+            <h1>Get Started</h1>
+        </div>
     <div class="card-2">
         <h2>Sign Up</h2>
         <p>Please fill this form to create an account.</p>

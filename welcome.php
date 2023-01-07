@@ -58,10 +58,17 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     <!--/.header-->
     <div class="container">
         <div class="card-2">
-        <h1 class="my-5">Hi, <b>
+            <h1 class="my-5">Hi, <b>
                     <?php echo htmlspecialchars($_SESSION["username"]); ?>
                 </b> Welcome to Métier Advisors</h1>
+            <div class="card-1">
+                <h4>Appointments</h4>
+            </div>
+            <div class="card-2">
+                
+            </div>
         </div>
+
         <div class="card-2">
             <p>
                 <a href="reset-password.php" id="book-button" class="btn btn-warning">Reset Your Password</a>

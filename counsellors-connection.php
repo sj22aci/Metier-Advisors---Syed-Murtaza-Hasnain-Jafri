@@ -1,14 +1,5 @@
 <?php
 // Connect to the database
-
-/*
-$host = "localhost";
-$username = "sj22aci";
-$password = "tuP4VFTHRAm8";
-$dbname = "dbsj22aci";
-*/
-
-// Connect to the database
 $host = "localhost";
 $username = "root";
 $password = "";

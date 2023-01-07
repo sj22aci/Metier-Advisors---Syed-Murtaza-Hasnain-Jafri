@@ -136,39 +136,42 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
     <!--/.header-->
     <div class="container">
-    <div class="card-2">
+        <div class="card-1">
+            <h1>Welcome</h1>
+        </div>
+        <div class="card-2">
 
-        <h2>Login</h2>
-        <p>Please fill in your credentials to login.</p>
+            <h2>Login</h2>
+            <p>Please fill in your credentials to login.</p>
 
-        <?php
-        if (!empty($login_err)) {
-            echo '<div class="alert alert-danger">' . $login_err . '</div>';
-        }
-        ?>
-        
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-            <div class="form-group">
-                <input type="text" name="username" placeholder="Username"
-                    class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>"
-                    value="<?php echo $username; ?>">
-                <span class="invalid-feedback">
-                    <?php echo $username_err; ?>
-                </span>
-            </div>
-            <div class="form-group">
-                <input type="password" name="password" placeholder="Password"
-                    class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>">
-                <span class="invalid-feedback">
-                    <?php echo $password_err; ?>
-                </span>
-            </div>
-            <div class="form-group">
-                <input type="submit" id="standard-button" class="btn btn-primary" value="Login">
-            </div>
-            <p>Don't have an account? <a href="register.php">Sign up now</a>.</p>
-        </form>
-    </div>
+            <?php
+            if (!empty($login_err)) {
+                echo '<div class="alert alert-danger">' . $login_err . '</div>';
+            }
+            ?>
+
+            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+                <div class="form-group">
+                    <input type="text" name="username" placeholder="Username"
+                        class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>"
+                        value="<?php echo $username; ?>">
+                    <span class="invalid-feedback">
+                        <?php echo $username_err; ?>
+                    </span>
+                </div>
+                <div class="form-group">
+                    <input type="password" name="password" placeholder="Password"
+                        class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>">
+                    <span class="invalid-feedback">
+                        <?php echo $password_err; ?>
+                    </span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" id="standard-button" class="btn btn-primary" value="Login">
+                </div>
+                <p>Don't have an account? <a href="register.php">Sign up now</a>.</p>
+            </form>
+        </div>
     </div>
 
     <div class="free">
@@ -221,7 +224,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </script>
 
     <!--Footer-->
-    
+
 </body>
 
 </html>
