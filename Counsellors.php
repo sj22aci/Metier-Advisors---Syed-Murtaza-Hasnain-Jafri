@@ -146,11 +146,6 @@ mysqli_close($conn);
             </div>
         </div>
     </div>
-
-    <div class="message_box" style="margin:10px 0px;">
-        <?php echo $status; ?>
-    </div>
-
     <div class="free">
         <br>
     </div>

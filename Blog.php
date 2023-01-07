@@ -50,41 +50,33 @@
         <div class="card-1">
             <h1>Blog</h1>
         </div>
-
-        <div class="card-2">
-            <h4>Eduvision Career Counseling App</h4>
-            <img src="Images/eduvision.png" alt="App Screenshot" style="width:180px;">
-            <h5>Advantages</h5>
-            <p>
-                Eduvision app provides students and parents the timely information and guidance with easy-to-use
-                features.<br>
-                It covers the latest education news, latest admission updates, scholarship updates, careers
-                introduction, education updates, and career counseling videos.
-            </p>
-            <h5>Disadvantages</h5>
-            <p>
-                Does not have the option to connect with a counsellor on the app.
-            </p>
-        </div>
-
-        <div class="card-2">
-            <h4>RightPath Career Counselling App</h4>
-            <img src="Images/rightpath.png" alt="App Screenshot" style="width:180px;">
-            <h5>Advantages</h5>
-            <p>
-                Offers connecting to counsellors via taking an appointment.
-            </p>
-            <h5>Disadvantages</h5>
-            <p>
-                Does not have the option for any news related to counselling and it also doesn't have the option for
-                counsellors to register themselves.
-            </p>
-        </div>
+        
+        <?php include 'blog-connection.php'; ?>
+        
     </div>
 
     <div class="free">
         <br>
     </div>
+
+    <script>
+        const bioTextElements = document.querySelectorAll("#bio-text");
+        const expandButtonElements = document.querySelectorAll("#expand-button");
+
+        bioTextElements.forEach((bioTextElement, index) => {
+            expandButtonElements[index].addEventListener("click", function () {
+                bioTextElement.classList.toggle("truncated");
+                if (bioTextElement.classList.contains("truncated")) {
+                    expandButtonElements[index].innerHTML = "See less";
+                    expandButtonElements[index].style.outline = "none";
+                } else {
+                    expandButtonElements[index].innerHTML = "Read more";
+                    expandButtonElements[index].style.outline = "none";
+                }
+            });
+        });
+    </script>
+
 
     <!-- Footer-->
     <div class="footer-bottom">
