@@ -1,3 +1,65 @@
+<?php
+
+$host = "localhost";
+$username = "root";
+$password = "";
+$dbname = "metier-advisors";
+
+// Create connection
+$conn = new mysqli($host, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$status = "";
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Get the form values
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $message = $_POST['message'];
+
+    // Sanitize the form values
+    $name = filter_var($name, FILTER_SANITIZE_STRING);
+    $email = filter_var($email, FILTER_SANITIZE_EMAIL);
+    $message = filter_var($message, FILTER_SANITIZE_STRING);
+
+    // Validate the form values
+    $formErrors = array();
+
+    if (empty($name)) {
+        $formErrors[] = 'Name is required';
+    }
+
+    if (empty($email)) {
+        $formErrors[] = 'Email is required';
+    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $formErrors[] = 'Email is not valid';
+    }
+
+    if (empty($message)) {
+        $formErrors[] = 'Message is required';
+    }
+
+    // If there are no errors, save the form values to the database
+    if (empty($formErrors)) {
+        $sql = "INSERT INTO contact (name, email, message) VALUES ('$name', '$email', '$message')";
+
+        // Execute the query and handle any errors
+        if ($conn->query($sql) === TRUE) {
+            $status = "<script>alert('New record created successfully');</script>";
+
+        } else {
+            $status = "<script>alert('Error: " . $sql . "<br>" . $conn->error . "');</script>";
+        }
+    }
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -52,10 +114,10 @@
         </div>
         <div class="card-2">
             <h2>Write us a Message</h2>
-            <form action="/submit-form" method="post">
-                <input type="text" placeholder="Name"><br>
-                <input type="email" placeholder="Email"><br>
-                <textarea id="message" placeholder="Message" name="message" rows="5" cols="30"></textarea><br>
+            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+                <input type="text" placeholder="Name" name="name"><br>
+                <input type="email" placeholder="Email" name="email"><br>
+                <textarea id="message" placeholder="Message" required name="message" rows="5" cols="30"></textarea><br>
                 <input id='standard-button' type="submit" value="Submit">
             </form>
         </div>
@@ -63,7 +125,11 @@
     <div class="free">
         <br>
     </div>
-
+    
+    <div class="message_box" style="margin:10px 0px;">
+			<?php echo $status; ?>
+		</div>
+    
     <!-- Footer-->
     <div class="footer-bottom">
         Copyright &copy; Métier Advisors . 2022
