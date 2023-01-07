@@ -63,6 +63,13 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
                 </b> Welcome to Métier Advisors</h1>
             <div class="card-1">
                 <h4>Bookings</h4>
+                <p style="text-align:justify;">
+                    If you have successfully booked your appointment you will be contacted with the details of payment
+                    and session via email<br>
+                </p>
+                <p style="text-align:center;">
+                    Thank you!
+                </p>
             </div>
             <table>
                 <tr>
