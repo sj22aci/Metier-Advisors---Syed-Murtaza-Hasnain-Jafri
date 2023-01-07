@@ -9,6 +9,36 @@ if (!isset($_SESSION["loggedin"]) || !$_SESSION["loggedin"]) {
     exit;
 }
 ?>
+<?php
+
+// Connect to the database
+$host = "localhost";
+$username = "root";
+$password = "";
+$dbname = "metier-advisors";
+
+$conn = mysqli_connect($host, $username, $password, $dbname);
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+// Get the list of counsellors from the database
+$result = mysqli_query($conn, "SELECT id, name FROM counsellors");
+
+// Generate the options for the select field
+$options = "";
+while ($row = mysqli_fetch_assoc($result)) {
+    $id = $row['id'];
+    $name = $row['name'];
+    $options .= "<option value='$id'>$name</option>";
+}
+
+// Close the connection
+mysqli_close($conn);
+
+?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -78,23 +108,31 @@ if (!isset($_SESSION["loggedin"]) || !$_SESSION["loggedin"]) {
                         <div class="modal-body">
                             <form action="book.php" method="post">
                                 <div class="form-group">
+                                    <label for="counsellor-select">Counsellor:</label>
+                                    <select class="form-control" id="counsellor-select" name="counsellor-select">
+                                        <?php echo $options; ?>
+                                    </select>
+                                </div>
+                                <div class="form-group">
                                     <label for="date-input">Date:</label>
-                                    <input type="date" class="form-control" id="date-input">
+                                    <input type="date" class="form-control" id="date-input" name="date-input">
                                 </div>
                                 <div class="form-group">
                                     <label for="time-input">Time:</label>
-                                    <input type="time" class="form-control" id="time-input">
+                                    <input type="time" class="form-control" id="time-input" name="time-input">
                                 </div>
                                 <div class="form-group">
                                     <label for="message-input">Message:</label>
-                                    <textarea class="form-control" id="message-input" rows="3"></textarea>
+                                    <textarea class="form-control" id="message-input" name="message-input"
+                                        rows="3"></textarea>
                                 </div>
                                 <div class="form-group">
                                     <label for="payment-select">Payment Option:</label>
-                                    <select class="form-control" id="payment-select">
+                                    <select class="form-control" id="payment-select" name="payment-select">
                                         <option>Bank Transfer</option>
                                     </select>
                                 </div>
+
                                 <button type="submit" id="standard-button" class="btn btn-primary">Submit</button>
                             </form>
                         </div>
