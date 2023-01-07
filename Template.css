@@ -68,11 +68,10 @@ p {
 }
 
 .card-1 {
-  background-color: #0a0a0f;
-  color: #ffffff;
+  background: none;
+  color: #0a0a0f;
   border-radius: 15px;
   margin: 10px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
 
 }
 
