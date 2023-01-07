@@ -74,7 +74,7 @@ mysqli_close($conn);
                         <li><a href="Main.html" class="scroll-link" data-id="Main">Main</a></li>
                         <li><a href="Counsellors.php" class="scroll-top">Counsellors</a></li>
                         <li><a href="Careers.php" class="scroll-link" data-id="Careers">Careers</a></li>
-                        <li><a href="Blog.html" class="scroll-link" data-id="Blog">Blog</a></li>
+                        <li><a href="Blog.php" class="scroll-link" data-id="Blog">Blog</a></li>
                         <li><a href="Contact.php" class="scroll-link" data-id="Contact">Contact Us</a></li>
                         <li><a href="login.php" class="scroll-link" data-id="Profile">My Profile</a></li>
                     </ul>

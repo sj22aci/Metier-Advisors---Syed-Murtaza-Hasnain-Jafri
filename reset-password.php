@@ -104,7 +104,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                         <li><a href="Main.html" class="scroll-link" data-id="Main">Main</a></li>
                         <li><a href="Counsellors.php" class="scroll-link" data-id="Counsellors">Counsellors</a></li>
                         <li><a href="Careers.php" class="scroll-link" data-id="Careers">Careers</a></li>
-                        <li><a href="Blog.html" class="scroll-link" data-id="Blog">Blog</a></li>
+                        <li><a href="Blog.php" class="scroll-link" data-id="Blog">Blog</a></li>
                         <li><a href="Contact.php" class="scroll-link" data-id="Contact">Contact Us</a></li>
                         <li><a href="login.php" class="scroll-top">My Profile</a></li>
                     </ul>
