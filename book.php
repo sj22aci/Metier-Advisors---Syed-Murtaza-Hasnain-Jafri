@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 // Connect to the database
 $host = "localhost";
 $username = "root";
@@ -10,28 +12,27 @@ $conn = mysqli_connect($host, $username, $password, $dbname);
 
 // Check connection
 if (!$conn) {
-  die("Connection failed: " . mysqli_connect_error());
+    die("Connection failed: " . mysqli_connect_error());
 }
 
-// Check if the form has been submitted
-if (isset($_POST['submit'])) {
-  // Get the form data
-  $date = mysqli_real_escape_string($conn, $_POST['date-input']);
-  $time = mysqli_real_escape_string($conn, $_POST['time-input']);
-  $message = mysqli_real_escape_string($conn, $_POST['message-input']);
-  $payment = mysqli_real_escape_string($conn, $_POST['payment-select']);
-  $counsellor_name = mysqli_real_escape_string($conn, $_POST['counsellor_name']);
-  
-  // Insert the data into the appointments table
-  $query = "INSERT INTO appointments (date, time, message, payment, counsellor_name) VALUES ('$date', '$time', '$message', '$payment', '$counsellor_name')";
-  
-  if (mysqli_query($conn, $query)) {
-      echo "Booking added successfully";
-  } else {
-      echo "Error: " . $query . "<br>" . mysqli_error($conn);
-  }
+// Get the form data
+$counsellor = $_POST['counsellor-select'];
+$date = $_POST['date-input'];
+$time = $_POST['time-input'];
+$message = $_POST['message-input'];
+$payment = $_POST['payment-select'];
+$user_id = $_SESSION['id'];
+
+// Insert the data into the MySQL database
+$sql = "INSERT INTO appointments (counsellors_id, date, time, message, payment, user_id)
+VALUES ('$counsellor', '$date', '$time', '$message', '$payment', '$user_id')";
+
+if (mysqli_query($conn, $sql)) {
+    echo "New record created successfully";
+} else {
+    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }
 
-// Close the connection
 mysqli_close($conn);
+
 ?>
