@@ -6,6 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="Template.css">
     <link rel="stylesheet" href="Dark-Template.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -48,29 +49,136 @@
 
 
     <div class="container">
-        <div class="card-1">
-            <h1>About Us</h1>
+        <div class="card-4">
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <img src="Images/slider1.jpg" alt="Los Angeles" style="width:100%;">
+                    </div>
+
+                    <div class="item">
+                        <img src="Images/slider2.jpg" alt="Chicago" style="width:100%;">
+                    </div>
+
+                    <div class="item">
+                        <img src="Images/slider3.jpg" alt="New york" style="width:100%;">
+                    </div>
+
+                    <div class="item">
+                        <img src="Images/slider4.jpg" alt="New york" style="width:100%;">
+                    </div>
+                </div>
+                <!-- Left and right controls -->
+                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
         </div>
-        <div class="card-2">
-            <p>
-                Welcome to our career counselling app! Our goal is to help students and professionals alike
-                take the next step in their career journey.<br>
-                <br>
-                For students, our app offers a platform to connect with experienced counsellors who can guide
-                you in making informed decisions about your future. You can also stay up-to-date on the latest
-                news and opportunities in your field of interest. <br>
-                <br>
-                For qualified counsellors, our app is a great way to find job opportunities and connect with
-                potential clients. You can create a profile and make yourself available to those seeking guidance.<br>
-                <br>
-                Overall, our app aims to be a one-stop-shop for career counselling and advice. We hope it helps
-                you achieve your goals and make your dreams a reality.<br>
-            </p>
-            <a href='Counsellors.php' id='standard-button' class='btn btn-primary'>
-                <h4>Find a Counsellor</h4>
-            </a>
-            <!--</div>-->
+    </div>
+    <div class="card-1">
+        <h1>About Us</h1>
+    </div>
+    <div class="card-2">
+        <p>
+            Welcome to our career counselling app! Our goal is to help students and professionals alike
+            take the next step in their career journey.<br>
+            <br>
+            For students, our app offers a platform to connect with experienced counsellors who can guide
+            you in making informed decisions about your future. You can also stay up-to-date on the latest
+            news and opportunities in your field of interest. <br>
+            <br>
+            For qualified counsellors, our app is a great way to find job opportunities and connect with
+            potential clients. You can create a profile and make yourself available to those seeking guidance.<br>
+            <br>
+            Overall, our app aims to be a one-stop-shop for career counselling and advice. We hope it helps
+            you achieve your goals and make your dreams a reality.<br>
+        </p>
+        <a href='Counsellors.php' id='standard-button' class='btn btn-primary'>
+            <h4>Find a Counsellor</h4>
+        </a>
+        <!--</div>-->
+    </div>
+    <div class="card-1">
+        <h1>Testimonials</h1>
+    </div>
+    <div class="card-2">
+        <div class="row g-2">
+            <div class="col-md-4">
+                <div class="card p-3 text-center px-4">
+                    <div class="user-image">
+                        <img src="Images/Student1.jpg" id="testimonial-img" class="rounded-circle" width="80">
+                    </div>
+
+                    <div class="user-content">
+                        <h5 class="mb-0">Sarah Arun</h5>
+                        <span>Student</span>
+                        <div class="ratings">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                        <p>
+                            The app is user-friendly and the counsellors are extremely knowledgeable and supportive.
+                            They take the time to listen to my concerns and provide helpful guidance on my next
+                            steps.
+                            I would highly recommend this app to anyone seeking guidance with their career."</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card p-3 text-center px-4">
+                    <div class="user-image">
+                        <img src="Images/Student2.jpg" id="testimonial-img" class="rounded-circle" width="80">
+                    </div>
+
+                    <div class="user-content">
+                        <h5 class="mb-0">Hassan Syed</h5>
+                        <span>A'Levels Student</span>
+                        <div class="ratings">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                        <p>The counsellors are incredibly understanding and compassionate,
+                            and have helped me explore various career options while making a plan for the future. I
+                            would recommend it.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card p-3 text-center px-4">
+                    <div class="user-image">
+                        <img src="Images/Student3.png" id="testimonial-img" class="rounded-circle" width="80">
+                    </div>
+
+                    <div class="user-content">
+                        <h5 class="mb-0">Fatima Khan</h5>
+                        <span>Student</span>
+                        <div class="ratings">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                        <p>LThe career counselling app has been a valuable resource. The counsellors are
+                            professional and helpful.
+                            I am extremely grateful to have found this app and would highly recommend it to anyone
+                            in need of career guidance.</p>
+                    </div>
+                </div>
+            </div>
         </div>
+    </div>
     </div>
 
 
@@ -124,7 +232,7 @@
     </script>
 
     <!--Footer-->
-    
+
 </body>
 
 </html>
