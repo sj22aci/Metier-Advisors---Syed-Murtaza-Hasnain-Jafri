@@ -97,6 +97,19 @@ p {
   display: flex;
 }
 
+.card-4 {
+  margin: 10px;
+  background: rgba(255, 255, 255, 0.15);
+  color: #0a0a0f;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+}
+
+.card-4 img {
+  border-radius: 15px;
+}
+
 .card-3 h5 {
   font-weight: bold;
   text-align: left;
@@ -110,9 +123,11 @@ p {
 .card-3 ul {
   text-align: justify;
 }
+
 .card-2 li {
   text-align: left;
 }
+
 table {
   margin: 0 auto;
   border-collapse: collapse; 
@@ -124,6 +139,19 @@ td {
   padding: 1px;
   border: 1px solid #3eb075;
   text-align: left;
+}
+
+.card{  
+  border:none;
+}
+
+.user-content p{
+  margin-top:5px;
+  font-size:12px;
+}
+
+.ratings i{
+  color:blue;
 }
 
 .card-2 input,
@@ -162,6 +190,12 @@ textarea::placeholder {
   padding: 5px;
   border-radius: 10px;
 }
+
+#testimonial-img {
+  padding: 5px;
+  border-radius: 10px;
+}
+
 .card-title-and-pay {
   display: flex;
   justify-content: space-between;
@@ -185,12 +219,14 @@ textarea::placeholder {
   color: #3eb075;
   cursor: pointer;
 }
+
 .bookbtn{
   background: none;
   text-align: center;
   margin: 10px;
 
 }
+
 #book-button {
   width: 100%;
   text-align: center;
