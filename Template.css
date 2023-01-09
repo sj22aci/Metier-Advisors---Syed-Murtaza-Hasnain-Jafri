@@ -99,11 +99,8 @@ p {
 
 .card-4 {
   margin: 10px;
-  background: rgba(255, 255, 255, 0.15);
-  color: #0a0a0f;
-  border-radius: 15px;
+  background: none;
   text-align: center;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
 }
 
 .card-4 img {
