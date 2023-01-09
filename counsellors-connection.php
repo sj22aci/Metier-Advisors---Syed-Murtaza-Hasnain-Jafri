@@ -21,7 +21,7 @@ if (mysqli_num_rows($result) > 0) {
   // Output data of each row
   while ($row = mysqli_fetch_assoc($result)) {
     echo "<div class='card-3'>";
-    echo "<img src='" . $row['image'] . "' class='card-img-top img-fluid' style='width: 100px; height: 100px;' alt='" . $row['name'] . "'>";
+    echo "<img src='" . $row['image'] . "' class='card-img-top img-fluid' id='counsellor-img' style='width: 100px; height: 100px;' alt='" . $row['name'] . "'>";
     echo "<div class='card-body'>";
     echo "<div class='card-title-and-pay'>";
     echo "<h5 class='card-title'>" . $row['name'] . "</h5>";

@@ -158,6 +158,10 @@ textarea::placeholder {
   cursor: pointer;
 }
 
+#counsellor-img {
+  padding: 5px;
+  border-radius: 10px;
+}
 .card-title-and-pay {
   display: flex;
   justify-content: space-between;
